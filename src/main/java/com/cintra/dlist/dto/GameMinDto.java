@@ -1,6 +1,7 @@
 package com.cintra.dlist.dto;
 
 import com.cintra.dlist.model.Game;
+import com.cintra.dlist.projections.GameMinProjection;
 
 public class GameMinDto {
 
@@ -19,6 +20,14 @@ public class GameMinDto {
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
         longDescription = entity.getLongDescription();
+    }
+
+    public GameMinDto(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        longDescription = projection.getLongDescription();
     }
 
     public long getId() {
